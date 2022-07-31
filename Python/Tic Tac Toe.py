@@ -1,4 +1,8 @@
-#Programming Tic Tac Toe in Python :)
+'''
+Programming Tic Tac Toe in Python :)
+Just a fun game, that's all
+Try to get 3 in a row!
+'''
 
 def display_board(board):
 	'''
@@ -27,22 +31,22 @@ def recieve_user_input(player, board):
 	returns an integer from 1-9, taken from the user
 	also ensures that the spot hasn't been taken yet
 	'''
-	userInput = ''
+	user_input = ''
 
-	while not userInput.isdigit() or int(userInput) not in range(1, 10) or board[int(userInput) - 1] != ' ':
-		userInput = input(f"Player{player}, choose your positon (1-9): ")
-		if not userInput.isdigit() or int(userInput) not in range(1, 10) or board[int(userInput) - 1] != ' ':
+	while not user_input.isdigit() or int(user_input) not in range(1, 10) or board[int(user_input) - 1] != ' ':
+		user_input = input(f"Player{player}, choose your positon (1-9): ")
+		if not user_input.isdigit() or int(user_input) not in range(1, 10) or board[int(user_input) - 1] != ' ':
 			print("Your input was invalid...")
 
-	return int(userInput)
+	return int(user_input)
 
 def recieve_choice(choices):
-	userInput = None
-	while userInput not in choices:
-		userInput = input("Enter (" + ' or '.join(str(i) for i in choices) + "): ")
-	return userInput
+	user_input = None
+	while user_input not in choices:
+		user_input = input("Enter (" + ' or '.join(str(i) for i in choices) + "): ")
+	return user_input
 
-def isFinished(board):
+def is_finished(board):
 	'''
 	returns the winner given the board
 	returns 'x' if x won
@@ -52,9 +56,9 @@ def isFinished(board):
 	'''
 	#check the rows
 	for row in range(0, 3):
-		startPos = row * 3
-		if board[startPos] == board[startPos + 1] and board[startPos + 1] == board[startPos + 2] and board[startPos] != ' ':
-			return board[startPos]
+		start_pos = row * 3
+		if board[start_pos] == board[start_pos + 1] and board[start_pos + 1] == board[start_pos + 2] and board[start_pos] != ' ':
+			return board[start_pos]
 
 	#check the columns
 	for column in range(0, 3):
@@ -79,28 +83,28 @@ def play_game():
 	print('Player1 will be playing first')
 	print("Let's allow Player2 to decide whether to be X's or O's")
 
-	charToDraw = recieve_choice(['x', 'o'])
+	char_to_draw = recieve_choice(['x', 'o'])
 
-	#Because it's player 1's turn, we have to switch the value of charToDraw
-	charToDraw = 'o' if charToDraw == 'x' else 'x'
+	#Because it's player 1's turn, we have to switch the value of char_to_draw
+	char_to_draw = 'o' if char_to_draw == 'x' else 'x'
 
-	gameContinue = 'y'
+	game_continue = 'y'
 
-	while gameContinue == 'y':
+	while game_continue == 'y':
 
-		gameBoard = [' '] * 9
-		whoseTurn = 1
+		game_board = [' '] * 9
+		whose_turn = 1
 
-		while isFinished(gameBoard) == "not over":
-			display_board(gameBoard)
-			gameBoard[recieve_user_input(whoseTurn, gameBoard) - 1] = charToDraw.upper()
-			charToDraw = 'o' if charToDraw == 'x' else 'x'
-			whoseTurn = 2 if whoseTurn == 1 else 1
-			print(isFinished(gameBoard))
+		while is_finished(game_board) == "not over":
+			display_board(game_board)
+			game_board[recieve_user_input(whose_turn, game_board) - 1] = char_to_draw.upper()
+			char_to_draw = 'o' if char_to_draw == 'x' else 'x'
+			whose_turn = 2 if whose_turn == 1 else 1
+			print(is_finished(game_board))
 
-		display_board(gameBoard)
-		print(f'{isFinished(gameBoard)} won!')
+		display_board(game_board)
+		print(f'{is_finished(game_board)} won!')
 		print("Play again?")
-		gameContinue = recieve_choice(['y', 'n'])
+		game_continue = recieve_choice(['y', 'n'])
 
 play_game()
