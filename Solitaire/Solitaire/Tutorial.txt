@@ -1,0 +1,49 @@
+            _____    _   _    _____     ___      ___      ___      ___      _               
+    o O O  |_   _|  | | | |  |_   _|   / _ \    | _ \    |_ _|    /   \    | |        o O O 
+   o         | |    | |_| |    | |    | (_) |   |   /     | |     | - |    | |__     o      
+  TS__[O]   _|_|_    \___/    _|_|_    \___/    |_|_\    |___|    |_|_|    |____|   TS__[O] 
+ {======| _|"""""| _|"""""| _|"""""| _|"""""| _|"""""| _|"""""| _|"""""| _|"""""|  {======| 
+./o--000' "`-0-0-' "`-0-0-' "`-0-0-' "`-0-0-' "`-0-0-' "`-0-0-' "`-0-0-' "`-0-0-' ./o--000' 
+
+
+Hello friend!!! Here, we'll show you how to navagate this text-based menu as well as play the game!
+
+Instructions for the menu:
+
+    "back" to go back a menu (going back from here will take you to the main menu!)
+
+    "end" will terminate the program
+
+    In other menus, there are different options to press. Type the text on the screen in order to access that option / submenu
+
+Instructions for the game:
+
+    Your goal as a player is to transfer cards from their starting position to the card foundation piles. 
+
+    If you do this and observe all the solitaire game rules, you win this game. Here are the rules of playing solitaire.
+
+    You can only move cards from one pile to another while observing the specific solitaire rules
+        For instance, one can move a 6 on top of a 7 or a Queen on top of a King.
+    Players have to arrange cards in alternating colors. E.g., if the above card is red, the other must be black.
+
+    Moving a card from one pile to the next frees up the next face-down card.
+
+    You should fill foundations in ascending order and ensure that they match the appropriate suit. 
+        E.g., two of hearts can only go on top of ace of hearts, followed by three of hearts.
+
+    A vacancy will be created by moving an entire row to other positions to create an empty tableau.
+
+    Only a king can be moved to an empty tableau
+
+How to input:
+    
+    "d" will reveal the next card in the draw pile
+
+    move [x][z] [y]
+        x is where you're taking the cards from (like d for draw, a for acestack, and 0-6 for the appropriate board stacks)
+        z is the amount of cards you are taking if x represents a board stack. z is which ace pile (0-3) if x is "a"
+        y is where you're moving the cards to (like 0-6 for another boardstack, a for acestack, and 0-4 for the appropriate ace stacks)
+
+    "r" will reset the board
+
+    "q" will quit the game
